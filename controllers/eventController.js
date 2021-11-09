@@ -30,13 +30,13 @@ exports.criarUmEvento = ({
   });
 };
 
-exports.listarEventosPorId = (profile_id) => {
+exports.listarEventosPorId = async (profile_id) =>{
   try {
-    const profileEvents = eventModels.listarEventos(profile_id);
+    const profileEvents = await eventModels.listarEventos(profile_id);
     return profileEvents;
   } catch (error) {
     return error;
   }
 };
 
-exports.buscarTodosEventos = () => eventModels.buscarTodosEventos();
+exports.buscarTodosEventos = async() => await eventModels.buscarTodosEventos();
